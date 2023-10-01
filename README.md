@@ -33,5 +33,6 @@ Uso:
 
 ---
 
+![image](https://github.com/BigArchLinux/Compress-Video/assets/145774158/0d5e404a-3624-4c9d-ad1c-d09b19520835)
 
 
