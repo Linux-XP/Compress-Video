@@ -63,10 +63,10 @@ process_video() {
     T_MINSIZE=$(awk -v arate="$O_ARATE" -v duration="$O_DUR" 'BEGIN { printf "%.2f", ( (arate * duration) / 8192 ) }')
 
     # Check if the target size is acceptable
-    if (( $(awk 'BEGIN {print ('"$T_MINSIZE"' < '"$T_SIZE"')}') )); then
+    if (( $(awk 'BEGIN {print ('"$T_MINSIZE"' > '"$T_SIZE"')}') )); then
         echo "Error: Target size ${T_SIZE}MB is too small for file $INPUT_FILE!"
         echo "Try values larger than ${T_MINSIZE}MB"
-        exit 1  # Termina o script com um cdigo de erro
+        exit 1  # Terminate the script with an error code
     fi
 
     # Set target audio bitrate
